@@ -13,7 +13,9 @@ const SITE_I18N = {
         feature3Desc: "Acompanhe seu tempo ativo x tempo de pausa acumulado por hora diretamente na extensão, com gráficos simples e privados.",
         footerPrivacyNotice: "Pausa não coleta dados. Toda a sua atividade permanece 100% armazenada localmente no seu navegador.",
         privacyTitle: "Política de Privacidade",
-        heroScreenshot: "assets/screenshot.svg"
+        heroScreenshot: "assets/screenshot.svg",
+        supportTitle: "Apoie o desenvolvimento do Pausa",
+        supportDesc: "O Pausa é 100% gratuito, com código aberto e sem rastreamento de dados. Se ele te ajuda a manter uma rotina mais saudável, considere pagar um café!",
     },
     en: {
         navHome: "Home",
@@ -29,6 +31,8 @@ const SITE_I18N = {
         feature3Desc: "Track active vs. break time per hour directly inside the extension popup using simple, private charts.",
         footerPrivacyNotice: "Pausa does not collect any data. All your activity data stays 100% stored locally in your browser.",
         privacyTitle: "Privacy Policy",
-        heroScreenshot: "assets/screenshot_en.svg"
+        heroScreenshot: "assets/screenshot_en.svg",
+        supportTitle: "Support Pausa's development",
+        supportDesc: "Pausa is 100% free, open-source, and has no data tracking. If it helps you maintain a healthier routine, consider buying me a coffee!",
     }
 };

@@ -27,12 +27,15 @@
         <section class="hero">
             <div class="container">
                 <h1 data-i18n="heroTitle">Cuide da sua saúde sem interromper o seu fluxo de trabalho</h1>
-                <p data-i18n="heroSubtitle">Uma extensão leve para o Chrome que detecta a ociosidade do sistema e lembra você de fazer pausas no momento certo.</p>
+                <p data-i18n="heroSubtitle">Uma extensão leve para o Chrome que detecta a ociosidade do sistema e lembra
+                    você de fazer pausas no momento certo.</p>
                 <div class="hero-cta">
-                    <a href="https://chromewebstore.google.com" id="downloadBtn" class="btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="ctaInstall">Instalar na Chrome Web Store</a>
+                    <a href="https://chromewebstore.google.com" id="downloadBtn" class="btn-primary" target="_blank"
+                        rel="noopener noreferrer" data-i18n="ctaInstall">Instalar na Chrome Web Store</a>
                 </div>
                 <div class="preview-container">
-                    <img src="assets/screenshot.svg" data-i18n-src="heroScreenshot" alt="Pausa Extension Screenshot" class="hero-screenshot">
+                    <img src="assets/screenshot.svg" data-i18n-src="heroScreenshot" alt="Pausa Extension Screenshot"
+                        class="hero-screenshot">
                 </div>
             </div>
         </section>
@@ -41,23 +44,59 @@
             <div class="container grid-3">
                 <div class="card">
                     <h3 data-i18n="feature1Title">Detecção Inteligente</h3>
-                    <p data-i18n="feature1Desc">Monitora a ociosidade real do sistema. Se você estiver em uma reunião sem digitar, o Pausa pergunta se você ainda está lá antes de contar uma pausa.</p>
+                    <p data-i18n="feature1Desc">Monitora a ociosidade real do sistema. Se você estiver em uma reunião
+                        sem digitar, o Pausa pergunta se você ainda está lá antes de contar uma pausa.</p>
                 </div>
                 <div class="card">
                     <h3 data-i18n="feature2Title">Aba em Tela Cheia</h3>
-                    <p data-i18n="feature2Desc">Receba lembretes visuais suaves com sugestões de alongamento e tempo para descansar os olhos e a postura.</p>
+                    <p data-i18n="feature2Desc">Receba lembretes visuais suaves com sugestões de alongamento e tempo
+                        para descansar os olhos e a postura.</p>
                 </div>
                 <div class="card">
                     <h3 data-i18n="feature3Title">Relatórios Diários</h3>
-                    <p data-i18n="feature3Desc">Acompanhe seu tempo ativo x tempo de pausa acumulado por hora diretamente na extensão, com gráficos simples e privados.</p>
+                    <p data-i18n="feature3Desc">Acompanhe seu tempo ativo x tempo de pausa acumulado por hora
+                        diretamente na extensão, com gráficos simples e privados.</p>
                 </div>
             </div>
         </section>
     </main>
+    <section class="support-section">
+        <div class="container text-center">
+            <h2 data-i18n="supportTitle">Apoie o desenvolvimento do Pausa</h2>
+            <p data-i18n="supportDesc">O Pausa é 100% gratuito, com código aberto e sem rastreamento de dados. Se ele te
+                ajuda a manter uma rotina mais saudável, considere pagar um café!</p>
 
+            <div class="support-grid">
+                <!-- Opção Brasil: PIX -->
+                <div class="support-card">
+                    <div class="support-icon">⚡</div>
+                    <h3>Brasil (PIX)</h3>
+                    <p>Apoie com qualquer valor via chave aleatória:</p>
+                    <div class="pix-box">
+                        <input type="text" id="pixKey"
+                            value="00020101021126330014br.gov.bcb.pix01117144751212052040000530398654045.005802BR5916ILITO S TORQUATO6009SAO PAULO62070503***6304C4F5"
+                            readonly>
+                        <button id="copyPixBtn" onclick="copyPixKey()">Copiar Chave</button>
+                    </div>
+                    <span id="copySuccess" class="copy-success" style="display: none;">Chave PIX copiada!</span>
+                </div>
+
+                <!-- Opção Internacional: Buy Me a Coffee / Ko-fi -->
+                <div class="support-card">
+                    <div class="support-icon">☕</div>
+                    <h3>Internacional</h3>
+                    <p>Donate via Credit Card, PayPal or Apple Pay:</p>
+                    <a href="https://ko-fi.com/ilitotor" target="_blank" rel="noopener noreferrer" class="btn-coffee">
+                        <span>☕</span> Tip Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer>
         <div class="container footer-container">
-            <p data-i18n="footerPrivacyNotice">Pausa não coleta dados. Toda a sua atividade permanece 100% armazenada localmente no seu navegador.</p>
+            <p data-i18n="footerPrivacyNotice">Pausa não coleta dados. Toda a sua atividade permanece 100% armazenada
+                localmente no seu navegador.</p>
             <p>&copy; Pausa Extension. Licença MIT.</p>
         </div>
     </footer>
