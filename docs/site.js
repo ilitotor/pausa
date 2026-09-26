@@ -35,3 +35,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     applyLanguage(currentLang);
 });
+
+function copyPixKey() {
+    const pixInput = document.getElementById("pixKey");
+    pixInput.select();
+    pixInput.setSelectionRange(0, 99999); // Para dispositivos móveis
+
+    navigator.clipboard.writeText(pixInput.value).then(() => {
+        const successMsg = document.getElementById("copySuccess");
+        const btn = document.getElementById("copyPixBtn");
+
+        btn.textContent = "Copiado!";
+        successMsg.style.display = "block";
+
+        setTimeout(() => {
+            btn.textContent = "Copiar Chave";
+            successMsg.style.display = "none";
+        }, 3000);
+    });
+}

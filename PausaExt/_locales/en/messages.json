@@ -3,6 +3,6 @@
     "message": "Pausa — Break reminder"
   },
   "appDesc": {
-    "message": "Monitors your activity (via system idle) and reminds you to take breaks. Customizable activity/break blocks, sitting check and daily report."
+    "message": "Reminds you to take breaks based on real system activity. Custom activity/break blocks, sitting check and daily report."
   }
 }
