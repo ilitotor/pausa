@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pausa — Lembrete de pausas / Break reminder</title>
+  <meta name="description" content="Pausa: trabalhe em blocos focados e descanse na hora certa. App para macOS e extensão para o Chrome.">
+  <link rel="icon" href="assets/icon128.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+      <img src="assets/icon128.png" alt="Pausa" width="32" height="32">
+      <span>Pausa</span>
+    </div>
+    <div class="nav-right">
+      <a href="#features" data-i18n="nav_features">Recursos</a>
+      <a href="#uses" data-i18n="nav_uses">Aplicações</a>
+      <a href="#install" data-i18n="nav_install">Instalar</a>
+      <button id="langToggle" class="lang-toggle">EN</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1 data-i18n="hero_title">Trabalhe em blocos. Descanse na hora certa.</h1>
+      <p data-i18n="hero_sub">A Pausa monitora sua atividade real e lembra você de fazer pausas — do jeito saudável de passar um longo dia no computador.</p>
+      <div class="hero-cta">
+        <a href="#install" class="btn btn-primary" data-i18n="hero_cta_primary">Começar</a>
+        <a href="#features" class="btn btn-ghost" data-i18n="hero_cta_secondary">Ver recursos</a>
+      </div>
+      <p class="hero-note" data-i18n="hero_note">macOS (app nativo) · Chrome / Edge (extensão) · Windows &amp; Linux via extensão</p>
+    </div>
+    <div class="hero-img">
+      <img src="assets/screenshot.png" alt="Pausa" />
+    </div>
+  </section>
+
+  <section id="features" class="section">
+    <h2 data-i18n="features_title">Recursos</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="ico">🎯</div>
+        <h3 data-i18n="f1_t">Blocos personalizáveis</h3>
+        <p data-i18n="f1_d">Digite qualquer valor — 32 min de trabalho, 18 de pausa — ou ajuste com +/−. Depois mude para 38/11 quando quiser.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🖥️</div>
+        <h3 data-i18n="f2_t">Atividade real do sistema</h3>
+        <p data-i18n="f2_d">Detecta mouse e teclado do computador inteiro, sem ler o que você digita e sem permissões invasivas.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🔔</div>
+        <h3 data-i18n="f3_t">Aviso difícil de ignorar</h3>
+        <p data-i18n="f3_d">Uma aba de pausa em tela cheia (ou só uma notificação, você escolhe) quando bate a hora.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🪑</div>
+        <h3 data-i18n="f4_t">Verificação de presença</h3>
+        <p data-i18n="f4_d">Ficou parado numa reunião? Diga que está presente e a pausa não é contada. Sem resposta, vira pausa.</p>
+      </div>
+      <div class="card">
+        <div class="ico">📊</div>
+        <h3 data-i18n="f5_t">Relatório diário</h3>
+        <p data-i18n="f5_d">Gráficos de tempo ativo x pausa por hora, número de pausas e histórico dos últimos dias.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🌎</div>
+        <h3 data-i18n="f6_t">Português e inglês</h3>
+        <p data-i18n="f6_d">Interface completa em dois idiomas, com troca a qualquer momento.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="uses" class="section alt">
+    <h2 data-i18n="uses_title">Para quem é</h2>
+    <div class="grid">
+      <div class="card">
+        <h3 data-i18n="u1_t">Foco tipo Pomodoro</h3>
+        <p data-i18n="u1_d">Monte ciclos de foco e descanso do seu jeito — 25/5, 52/17, 90/20 — sem regras fixas.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="u2_t">Saúde dos olhos e postura</h3>
+        <p data-i18n="u2_d">Lembretes regulares para descansar a vista, levantar e alongar reduzem fadiga e tensão.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="u3_t">Home office</h3>
+        <p data-i18n="u3_d">Sem um colega para te chamar pro café, a Pausa faz esse papel — inclusive nas reuniões longas.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="u4_t">Estudos</h3>
+        <p data-i18n="u4_d">Blocos de estudo com pausas cronometradas ajudam a manter a concentração por mais tempo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="install" class="section">
+    <h2 data-i18n="install_title">Instalar</h2>
+    <div class="grid two">
+      <div class="card">
+        <h3>🧩 <span data-i18n="install_ext_t">Extensão (Chrome / Edge)</span></h3>
+        <p data-i18n="install_ext_d">Funciona em Windows, Mac e Linux enquanto o navegador estiver aberto.</p>
+        <ol>
+          <li data-i18n="install_ext_1">Baixe e descompacte a extensão.</li>
+          <li data-i18n="install_ext_2">Abra <code>chrome://extensions</code> e ative o Modo do desenvolvedor.</li>
+          <li data-i18n="install_ext_3">Clique em "Carregar sem compactação" e selecione a pasta.</li>
+        </ol>
+        <a href="#" class="btn btn-primary" data-i18n="install_ext_btn">Baixar extensão</a>
+      </div>
+      <div class="card">
+        <h3>🍎 <span data-i18n="install_mac_t">App para macOS</span></h3>
+        <p data-i18n="install_mac_d">App nativo na barra de menu, roda mesmo com o navegador fechado. Compila sem Xcode.</p>
+        <ol>
+          <li data-i18n="install_mac_1">Instale as Command Line Tools: <code>xcode-select --install</code></li>
+          <li data-i18n="install_mac_2">Na pasta do projeto: <code>chmod +x build.sh &amp;&amp; ./build.sh</code></li>
+          <li data-i18n="install_mac_3">Abra com <code>open Pausa.app</code></li>
+        </ol>
+        <a href="#" class="btn btn-primary" data-i18n="install_mac_btn">Baixar app do Mac</a>
+      </div>
+    </div>
+    <p class="privacy-line">
+      <span data-i18n="privacy_line">Privacidade: sem contas, sem servidores, sem rastreamento. Tudo fica no seu dispositivo.</span>
+      <a href="privacy.html" data-i18n="privacy_link">Política de privacidade</a>
+    </p>
+  </section>
+
+  <footer class="footer">
+    <p>Pausa · <span data-i18n="footer_tagline">Feito para te lembrar de descansar.</span></p>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>
