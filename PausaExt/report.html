@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pausa</title>
+  <link rel="stylesheet" href="report.css">
+</head>
+<body>
+  <div class="container">
+    <h1 data-i18n="report_title">Relatório do dia</h1>
+
+    <div class="cards">
+      <div class="card"><span class="card-label" data-i18n="card_active">Tempo ativo</span><span id="c-active" class="card-value green">—</span></div>
+      <div class="card"><span class="card-label" data-i18n="card_break">Tempo em pausa</span><span id="c-break" class="card-value teal">—</span></div>
+      <div class="card"><span class="card-label" data-i18n="card_count">Pausas</span><span id="c-count" class="card-value orange">—</span></div>
+    </div>
+
+    <h2 data-i18n="today_by_hour">Hoje, por hora</h2>
+    <div id="hourly" class="chart hourly"></div>
+    <div class="legend">
+      <span><i class="sw green"></i> <span data-i18n="legend_active">Ativo</span></span>
+      <span><i class="sw teal"></i> <span data-i18n="legend_break">Pausa</span></span>
+    </div>
+
+    <h2 data-i18n="last_days">Últimos dias (horas ativas)</h2>
+    <div id="weekly" class="chart weekly"></div>
+
+    <p class="note" data-i18n="report_note">Os dados são registrados apenas enquanto o Chrome está aberto, com granularidade de ~15–30s. Guardamos os últimos 14 dias.</p>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="report.js"></script>
+</body>
+</html>

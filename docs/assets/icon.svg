@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" rx="28" fill="#ffffff" />
+  <g stroke="#2e7d32" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Head -->
+    <circle cx="64" cy="38" r="8" fill="#2e7d32" stroke="none" />
+    <!-- Raised Arms (\ /) -->
+    <path d="M44 48 L56 64 L64 68" />
+    <path d="M84 48 L72 64 L64 68" />
+    <!-- Body -->
+    <path d="M64 68 L64 90" />
+    <!-- Legs -->
+    <path d="M64 90 L52 110" />
+    <path d="M64 90 L76 110" />
+  </g>
+</svg>

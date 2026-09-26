@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <img src="icons/icon32.png" alt="" width="22" height="22">
+    <h1>Pausa</h1>
+  </div>
+
+  <div id="status" class="status"></div>
+
+  <div class="progress-wrap">
+    <div id="progress" class="progress-bar"></div>
+  </div>
+
+  <p id="subinfo" class="subinfo"></p>
+  <p id="today" class="today"></p>
+
+  <div class="field">
+    <label data-i18n="remind_every">Bloco de atividade</label>
+    <div class="stepper">
+      <button class="step" data-target="workLimit" data-delta="-1">−</button>
+      <input type="number" id="workLimit" min="1" max="240" step="1" value="30">
+      <button class="step" data-target="workLimit" data-delta="1">+</button>
+      <span class="unit" data-i18n="unit_min">min</span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label data-i18n="break_after">Pausa válida após</label>
+    <div class="stepper">
+      <button class="step" data-target="breakDuration" data-delta="-1">−</button>
+      <input type="number" id="breakDuration" min="1" max="120" step="1" value="3">
+      <button class="step" data-target="breakDuration" data-delta="1">+</button>
+      <span class="unit" data-i18n="unit_min">min</span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label data-i18n="alert_style">Estilo do aviso</label>
+    <select id="alertStyle">
+      <option value="tab" data-i18n="alert_style_tab">Abrir aba de pausa</option>
+      <option value="notification" data-i18n="alert_style_notif">Só notificação</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label data-i18n="language">Idioma</label>
+    <select id="lang">
+      <option value="en">English</option>
+      <option value="pt_BR">Português</option>
+    </select>
+  </div>
+
+  <div class="actions">
+    <button id="report" class="btn" data-i18n="btn_report">📊 Ver relatório</button>
+    <button id="snooze" class="btn" data-i18n="btn_snooze">⏰ Adiar +15 min</button>
+    <button id="reset" class="btn btn-secondary" data-i18n="btn_reset">✅ Já fiz minha pausa</button>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

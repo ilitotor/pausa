@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pausa — Extensão para Chrome</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/icon.svg" alt="Pausa Logo" width="32" height="32">
+                <span>Pausa</span>
+            </a>
+            <div class="nav-right">
+                <a href="privacy.html" data-i18n="navPrivacy">Privacidade</a>
+                <button id="langToggle" class="btn-secondary">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 data-i18n="heroTitle">Cuide da sua saúde sem interromper o seu fluxo de trabalho</h1>
+                <p data-i18n="heroSubtitle">Uma extensão leve para o Chrome que detecta a ociosidade do sistema e lembra você de fazer pausas no momento certo.</p>
+                <div class="hero-cta">
+                    <a href="https://chromewebstore.google.com" id="downloadBtn" class="btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="ctaInstall">Instalar na Chrome Web Store</a>
+                </div>
+                <div class="preview-container">
+                    <img src="assets/screenshot.svg" data-i18n-src="heroScreenshot" alt="Pausa Extension Screenshot" class="hero-screenshot">
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container grid-3">
+                <div class="card">
+                    <h3 data-i18n="feature1Title">Detecção Inteligente</h3>
+                    <p data-i18n="feature1Desc">Monitora a ociosidade real do sistema. Se você estiver em uma reunião sem digitar, o Pausa pergunta se você ainda está lá antes de contar uma pausa.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="feature2Title">Aba em Tela Cheia</h3>
+                    <p data-i18n="feature2Desc">Receba lembretes visuais suaves com sugestões de alongamento e tempo para descansar os olhos e a postura.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="feature3Title">Relatórios Diários</h3>
+                    <p data-i18n="feature3Desc">Acompanhe seu tempo ativo x tempo de pausa acumulado por hora diretamente na extensão, com gráficos simples e privados.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <p data-i18n="footerPrivacyNotice">Pausa não coleta dados. Toda a sua atividade permanece 100% armazenada localmente no seu navegador.</p>
+            <p>&copy; Pausa Extension. Licença MIT.</p>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="site.js"></script>
+</body>
+
+</html>

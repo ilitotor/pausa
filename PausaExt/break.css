@@ -1,0 +1,113 @@
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(160deg, #4ade80 0%, #15803d 100%);
+  color: #123;
+  padding: 24px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 24px;
+  padding: 40px 44px;
+  max-width: 460px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  animation: pop 0.35s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.94); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.logo {
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-size: 26px;
+  margin: 8px 0 6px;
+  color: #14532d;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #4b5563;
+  margin: 0 0 24px;
+}
+
+.timer-wrap { margin-bottom: 24px; }
+.timer {
+  font-size: 52px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #16a34a;
+  line-height: 1;
+}
+.timer-label {
+  font-size: 12px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+.tips {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  text-align: left;
+  display: inline-block;
+}
+.tips li {
+  font-size: 14px;
+  color: #374151;
+  margin: 8px 0;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.btn {
+  font-size: 15px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #1f2937;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.05s;
+}
+.btn:hover { background: #f3f4f6; }
+.btn:active { transform: scale(0.98); }
+.btn-primary {
+  background: #16a34a;
+  color: #fff;
+  border-color: #16a34a;
+  font-weight: 600;
+}
+.btn-primary:hover { background: #15803d; }
+
+@media (prefers-color-scheme: dark) {
+  .card { background: #1f2430; color: #e5e7eb; }
+  h1 { color: #86efac; }
+  .subtitle { color: #9ca3af; }
+  .tips li { color: #d1d5db; }
+  .btn { background: #2b3140; color: #e5e7eb; border-color: #374151; }
+  .btn:hover { background: #374151; }
+  .btn-primary { background: #16a34a; color: #fff; }
+}

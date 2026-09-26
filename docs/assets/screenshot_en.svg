@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#388e3c" />
+      <stop offset="100%" stop-color="#1b5e20" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Canvas Background -->
+  <rect width="1000" height="600" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Left Side: Brand Logo & Title -->
+  <g transform="translate(100, 140)">
+    <!-- Big Logo Card -->
+    <rect width="200" height="200" rx="44" fill="#ffffff" filter="url(#shadow)" />
+    <!-- Stick Figure -->
+    <g transform="translate(36, 26)" stroke="#2e7d32" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <circle cx="64" cy="38" r="9" fill="#2e7d32" stroke="none" />
+      <path d="M42 46 L58 64 L64 68" />
+      <path d="M86 46 L70 64 L64 68" />
+      <path d="M64 68 L64 94" />
+      <path d="M64 94 L50 118" />
+      <path d="M64 94 L78 118" />
+    </g>
+
+    <!-- Title & Tagline -->
+    <text x="0" y="270" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="800" fill="#ffffff">Pausa</text>
+    <text x="0" y="315" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="600" fill="#e8f5e9">Take breaks at the right time</text>
+  </g>
+
+  <!-- Right Side: Popup Card Mockup (English UI) -->
+  <g transform="translate(540, 90)" filter="url(#shadow)">
+    <!-- Main Card Body -->
+    <rect width="360" height="420" rx="24" fill="#ffffff" />
+    
+    <!-- Popup Header -->
+    <text x="32" y="56" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="700" fill="#1b5e20">Pausa</text>
+
+    <!-- Progress Label -->
+    <text x="32" y="104" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="500" fill="#424242">Active time: <tspan font-weight="600">24:15</tspan></text>
+    
+    <!-- Progress Bar Track -->
+    <rect x="32" y="120" width="296" height="12" rx="6" fill="#f0f0f0" />
+    <!-- Progress Bar Fill -->
+    <rect x="32" y="120" width="210" height="12" rx="6" fill="#2e7d32" />
+
+    <!-- Subtitle text -->
+    <text x="32" y="156" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#757575">Next reminder in 6 min</text>
+
+    <!-- Divider -->
+    <line x1="32" y1="180" x2="328" y2="180" stroke="#eeeeee" stroke-width="1" />
+
+    <!-- Detail Row 1 -->
+    <text x="32" y="214" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#424242">Activity block</text>
+    <rect x="236" y="196" width="92" height="28" rx="6" fill="#f5f5f5" />
+    <text x="282" y="215" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#333333" text-anchor="middle">32 min</text>
+
+    <!-- Detail Row 2 -->
+    <text x="32" y="260" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#424242">Break counts after</text>
+    <rect x="236" y="242" width="92" height="28" rx="6" fill="#f5f5f5" />
+    <text x="282" y="261" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#333333" text-anchor="middle">18 min</text>
+
+    <!-- Main CTA Button -->
+    <rect x="32" y="300" width="296" height="44" rx="10" fill="#2e7d32" />
+    <text x="180" y="327" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">View report</text>
+
+    <!-- Secondary Button -->
+    <rect x="32" y="356" width="296" height="40" rx="10" fill="#f5f5f5" />
+    <text x="180" y="381" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" fill="#424242" text-anchor="middle">Snooze +15 min</text>
+  </g>
+</svg>

@@ -1,0 +1,129 @@
+name: Gemini Extension Review & Lint
+
+on:
+  pull_request:
+    paths:
+      - 'PausaExt/**'
+
+jobs:
+  validate-and-review:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate Syntax (JSON & JS)
+        run: |
+          echo "=== Verificando sintaxe JSON ==="
+          find PausaExt -type f -name "*.json" -exec node -e "JSON.parse(require('fs').readFileSync('{}'))" \;
+          
+          echo "=== Verificando sintaxe JavaScript ==="
+          find PausaExt -type f -name "*.js" -exec node --check {} \;
+
+      - name: Check Manifest V3 Structure
+        run: |
+          node -e '
+            const manifest = JSON.parse(require("fs").readFileSync("PausaExt/manifest.json", "utf8"));
+            if (manifest.manifest_version !== 3) {
+              console.error("Erro: manifest_version deve ser 3");
+              process.exit(1);
+            }
+            if (!manifest.name || !manifest.version) {
+              console.error("Erro: manifest.json precisa de name e version");
+              process.exit(1);
+            }
+            console.log("Manifest V3 validado com sucesso.");
+          '
+
+      - name: Run Gemini Code Review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "Aviso: GEMINI_API_KEY não configurada nos Secrets. Pulando revisão de AI."
+            exit 0
+          fi
+
+          # Obter as alterações do Pull Request
+          git diff origin/${{ github.base_ref }}...HEAD -- PausaExt/ > pr_diff.txt
+
+          if [ ! -s pr_diff.txt ]; then
+            echo "Nenhuma alteração detectada na pasta PausaExt/."
+            exit 0
+          fi
+
+          # Executar script Node.js para chamar a API do Gemini e comentar no PR
+          node -e '
+            const fs = require("fs");
+            const https = require("https");
+
+            const apiKey = process.env.GEMINI_API_KEY;
+            const token = process.env.GITHUB_TOKEN;
+            const prNumber = process.env.PR_NUMBER;
+            const repo = process.env.GITHUB_REPOSITORY;
+            const diff = fs.readFileSync("pr_diff.txt", "utf8");
+
+            const promptText = `Você é um revisor especialista em extensões do Google Chrome (Manifest V3, JavaScript puro, i18n).
+          Análise as alterações (diff) abaixo no projeto PausaExt e aponte:
+          1. Erros de sintaxe, escopo ou segurança (ex: violações de CSP).
+          2. Problemas na integração do i18n ou chrome.storage/chrome.idle.
+          3. Sugestões pontuais de melhoria.
+
+          Se tudo estiver correto, forneça um breve parecer positivo em português.
+
+          Diff:
+          ${diff.substring(0, 15000)}`;
+
+            const payload = JSON.stringify({
+              contents: [{ parts: [{ text: promptText }] }]
+            });
+
+            const req = https.request({
+              hostname: "generativelanguage.googleapis.com",
+              path: `/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "Content-Length": Buffer.byteLength(payload)
+              }
+            }, (res) => {
+              let body = "";
+              res.on("data", chunk => body += chunk);
+              res.on("end", () => {
+                const response = JSON.parse(body);
+                const reviewComment = response?.candidates?.[0]?.content?.parts?.[0]?.text || "Erro ao gerar revisão do Gemini.";
+                
+                // Comentar no PR do GitHub
+                const githubPayload = JSON.stringify({ body: "### 🤖 Revisão Automatizada — Gemini AI\n\n" + reviewComment });
+                const ghReq = https.request({
+                  hostname: "api.github.com",
+                  path: `/repos/${repo}/issues/${prNumber}/comments`,
+                  method: "POST",
+                  headers: {
+                    "User-Agent": "NodeJS-Script",
+                    "Authorization": `Bearer ${token}`,
+                    "Accept": "application/vnd.github.v3+json",
+                    "Content-Type": "application/json",
+                    "Content-Length": Buffer.byteLength(githubPayload)
+                  }
+                }, (ghRes) => {
+                  console.log("Comentário enviado ao GitHub com status:", ghRes.statusCode);
+                });
+                ghReq.write(githubPayload);
+                ghReq.end();
+              });
+            });
+
+            req.write(payload);
+            req.end();
+          '

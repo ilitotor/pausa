@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pausa</title>
+  <link rel="stylesheet" href="break.css">
+</head>
+<body>
+  <div class="card">
+    <img src="icons/icon128.png" alt="" width="88" height="88" class="logo">
+    <h1 data-i18n="break_title">Hora de uma pausa! 🚶</h1>
+    <p id="subtitle" class="subtitle" data-i18n="break_subtitle_default">Você trabalhou por um bom tempo. Levante e respire um pouco.</p>
+
+    <div class="timer-wrap">
+      <div id="timer" class="timer">05:00</div>
+      <div class="timer-label" data-i18n="suggested_break">pausa sugerida</div>
+    </div>
+
+    <ul class="tips">
+      <li data-i18n="tip_eyes">👀 Olhe para algo a 6 metros por 20 segundos</li>
+      <li data-i18n="tip_stretch">🧍 Levante e alongue o pescoço e os ombros</li>
+      <li data-i18n="tip_water">💧 Beba um copo d'água</li>
+    </ul>
+
+    <div class="actions">
+      <button id="done" class="btn btn-primary" data-i18n="btn_done">✅ Já fiz minha pausa</button>
+      <button id="snooze" class="btn" data-i18n="btn_snooze_break">⏰ Adiar +15 min</button>
+    </div>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="break.js"></script>
+</body>
+</html>
